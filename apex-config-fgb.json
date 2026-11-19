@@ -13,9 +13,11 @@
       "title": "Subsidence – Bari coastline (Sentinel-1 descending)"
     },
     "theme": {
-      "primary-color": "#1a3a5c",
-      "background-color": "#ffffff",
-      "text-color-primary": "#1a1a1a"
+      "primary-color": "#003247",
+      "background-color": "#f3f7f8",
+      "text-color-primary": "#ffffff",
+      "text-color-secondary": "#333333",
+      "secondary-color": "#335e6f"
     }
   },
   "interfaceGroups": [
@@ -24,16 +26,22 @@
   "exclusivitySets": [
     "basemaps"
   ],
+  "mapConstraints": {
+    "zoom": 12,
+    "center": [
+      16.875,
+      41.125
+    ],
+    "projection": "EPSG:3857"
+  },
+  "workflows": [],
+  "stories": [],
   "services": [],
   "sources": [
     {
       "id": "basemap-osm",
       "name": "OpenStreetMap",
       "isActive": true,
-      "isBaseLayer": true,
-      "exclusivitySets": [
-        "basemaps"
-      ],
       "data": [
         {
           "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -42,12 +50,18 @@
         }
       ],
       "meta": {
-        "description": "",
+        "description": "Base layer: OpenStreetMap",
         "attribution": {
           "text": "© OpenStreetMap contributors",
           "url": "https://www.openstreetmap.org/copyright"
-        }
-      }
+        },
+        "categories": []
+      },
+      "isBaseLayer": true,
+      "exclusivitySets": [
+        "basemaps"
+      ],
+      "layout": {}
     },
     {
       "id": "output-descending-subsidenza",
@@ -116,39 +130,99 @@
           ]
         }
       ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "Displacement time series",
+          "subtitle": "Cumulative LOS displacement of the selected point since 14/05/2015",
+          "x": "date",
+          "traces": [
+            {
+              "y": "disp",
+              "name": "LOS displacement of the selected point",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#d62728",
+                "width": 2
+              },
+              "marker": {
+                "size": 4,
+                "color": "#d62728"
+              },
+              "showlegend": false
+            }
+          ],
+          "layout": {
+            "height": 380,
+            "showlegend": false,
+            "xaxis": {
+              "title": {
+                "text": "Date"
+              },
+              "type": "date",
+              "rangeslider": {
+                "visible": true,
+                "thickness": 0.12
+              }
+            },
+            "yaxis": {
+              "title": {
+                "text": "LOS displacement [mm]"
+              },
+              "zeroline": true,
+              "zerolinecolor": "#888888"
+            }
+          },
+          "sources": [
+            {
+              "type": "lookupURL",
+              "field": "statistics-url",
+              "format": "csv",
+              "label": "Time series from the CSV referenced in the statistics-url field"
+            }
+          ]
+        }
+      ],
       "meta": {
         "description": "Mean displacement velocity along the line of sight (field `vel`, mm/year), Sentinel-1 descending orbit. Negative values indicate subsidence. 10 demonstration points along the Bari coastline (synthetic data).\n\n**How to view the time series.**\n- Open *Data Values*\n- Click on a point\n- Open the *Charts* tab",
         "attribution": {
           "text": "Test data – teresafazio/apex-insar-chart-bari-fgb",
           "url": "https://github.com/teresafazio/apex-insar-chart-bari-fgb"
         },
-        "units": "mm/year",
         "categories": [
           {
             "color": "#67001f",
-            "label": "Very strong subsidence (< -10)"
+            "label": "Very strong subsidence (< -10)",
+            "value": 0
           },
           {
             "color": "#b2182b",
-            "label": "Strong subsidence (-10 to -5)"
+            "label": "Strong subsidence (-10 to -5)",
+            "value": 0
           },
           {
             "color": "#ef8a62",
-            "label": "Moderate subsidence (-5 to -2)"
+            "label": "Moderate subsidence (-5 to -2)",
+            "value": 0
           },
           {
             "color": "#fddbc7",
-            "label": "Slight subsidence (-2 to -1)"
+            "label": "Slight subsidence (-2 to -1)",
+            "value": 0
           },
           {
             "color": "#1a9850",
-            "label": "Stable (-1 to +1)"
+            "label": "Stable (-1 to +1)",
+            "value": 0
           },
           {
             "color": "#4393c3",
-            "label": "Uplift (> +1)"
+            "label": "Uplift (> +1)",
+            "value": 0
           }
         ],
+        "units": "mm/year",
         "fields": {
           "code": {
             "label": "Point code",
@@ -495,68 +569,12 @@
             "download": "https://teresafazio.github.io/apex-insar-chart-bari-fgb/data/gpkg/output_descending.zip"
           }
         }
-      },
-      "charts": [
-        {
-          "chartType": "xy",
-          "title": "Displacement time series",
-          "subtitle": "Cumulative LOS displacement of the selected point since 14/05/2015",
-          "x": "date",
-          "traces": [
-            {
-              "y": "disp",
-              "name": "LOS displacement of the selected point",
-              "type": "scatter",
-              "mode": "lines+markers",
-              "line": {
-                "color": "#d62728",
-                "width": 2
-              },
-              "marker": {
-                "size": 4,
-                "color": "#d62728"
-              },
-              "showlegend": false
-            }
-          ],
-          "layout": {
-            "height": 380,
-            "showlegend": false,
-            "xaxis": {
-              "type": "date",
-              "title": {
-                "text": "Date"
-              },
-              "rangeslider": {
-                "visible": true,
-                "thickness": 0.12
-              }
-            },
-            "yaxis": {
-              "title": {
-                "text": "LOS displacement [mm]"
-              },
-              "zeroline": true,
-              "zerolinecolor": "#888888"
-            }
-          },
-          "sources": [
-            {
-              "type": "lookupURL",
-              "field": "statistics-url",
-              "format": "csv",
-              "label": "Time series from the CSV referenced in the statistics-url field"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "output-descending-ts-spostamento",
       "name": "Cumulative LOS displacement – time series",
       "isActive": true,
-      "timeframe": "Days",
-      "defaultTimestamp": 1788825600,
       "data": [
         {
           "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20150514.fgb",
@@ -3567,39 +3585,99 @@
           ]
         }
       ],
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "Displacement time series",
+          "subtitle": "Cumulative LOS displacement of the selected point since 14/05/2015",
+          "x": "date",
+          "traces": [
+            {
+              "y": "disp",
+              "name": "LOS displacement of the selected point",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#d62728",
+                "width": 2
+              },
+              "marker": {
+                "size": 4,
+                "color": "#d62728"
+              },
+              "showlegend": false
+            }
+          ],
+          "layout": {
+            "height": 380,
+            "showlegend": false,
+            "xaxis": {
+              "title": {
+                "text": "Date"
+              },
+              "type": "date",
+              "rangeslider": {
+                "visible": true,
+                "thickness": 0.12
+              }
+            },
+            "yaxis": {
+              "title": {
+                "text": "LOS displacement [mm]"
+              },
+              "zeroline": true,
+              "zerolinecolor": "#888888"
+            }
+          },
+          "sources": [
+            {
+              "type": "lookupURL",
+              "field": "statistics-url",
+              "format": "csv",
+              "label": "Time series from the CSV referenced in the statistics-url field"
+            }
+          ]
+        }
+      ],
       "meta": {
         "description": "Cumulative displacement along the line of sight (field `disp`, mm) relative to the first acquisition on 14/05/2015, Sentinel-1 descending orbit. Use the time slider to browse 47 acquisitions (one per quarter) up to 08/09/2026. 10 demonstration points along the Bari coastline (synthetic data).\n\n**How to view the time series.**\n- Open *Data Values*\n- Click on a point\n- Open the *Charts* tab",
         "attribution": {
           "text": "Test data – teresafazio/apex-insar-chart-bari-fgb",
           "url": "https://github.com/teresafazio/apex-insar-chart-bari-fgb"
         },
-        "units": "mm",
         "categories": [
           {
             "color": "#67001f",
-            "label": "< -20 mm"
+            "label": "< -20 mm",
+            "value": 0
           },
           {
             "color": "#b2182b",
-            "label": "-20 to -10 mm"
+            "label": "-20 to -10 mm",
+            "value": 0
           },
           {
             "color": "#ef8a62",
-            "label": "-10 to -5 mm"
+            "label": "-10 to -5 mm",
+            "value": 0
           },
           {
             "color": "#fddbc7",
-            "label": "-5 to -2 mm"
+            "label": "-5 to -2 mm",
+            "value": 0
           },
           {
             "color": "#1a9850",
-            "label": "-2 to +2 mm (stable)"
+            "label": "-2 to +2 mm (stable)",
+            "value": 0
           },
           {
             "color": "#4393c3",
-            "label": "> +2 mm"
+            "label": "> +2 mm",
+            "value": 0
           }
         ],
+        "units": "mm",
         "fields": {
           "code": {
             "label": "Point code",
@@ -3607,9 +3685,9 @@
           },
           "date": {
             "label": "Acquisition date",
+            "order": 2,
             "type": "date",
-            "format": "dd/MM/yyyy",
-            "order": 2
+            "format": "dd/MM/yyyy"
           },
           "disp": {
             "label": "Cumulative LOS displacement",
@@ -3640,10 +3718,6 @@
           },
           "fid": null,
           "statistics-url": null
-        },
-        "temporal": {
-          "timeframe": "Days",
-          "defaultTimestamp": 1788825600
         }
       },
       "layout": {
@@ -3670,68 +3744,8 @@
           }
         }
       },
-      "charts": [
-        {
-          "chartType": "xy",
-          "title": "Displacement time series",
-          "subtitle": "Cumulative LOS displacement of the selected point since 14/05/2015",
-          "x": "date",
-          "traces": [
-            {
-              "y": "disp",
-              "name": "LOS displacement of the selected point",
-              "type": "scatter",
-              "mode": "lines+markers",
-              "line": {
-                "color": "#d62728",
-                "width": 2
-              },
-              "marker": {
-                "size": 4,
-                "color": "#d62728"
-              },
-              "showlegend": false
-            }
-          ],
-          "layout": {
-            "height": 380,
-            "showlegend": false,
-            "xaxis": {
-              "type": "date",
-              "title": {
-                "text": "Date"
-              },
-              "rangeslider": {
-                "visible": true,
-                "thickness": 0.12
-              }
-            },
-            "yaxis": {
-              "title": {
-                "text": "LOS displacement [mm]"
-              },
-              "zeroline": true,
-              "zerolinecolor": "#888888"
-            }
-          },
-          "sources": [
-            {
-              "type": "lookupURL",
-              "field": "statistics-url",
-              "format": "csv",
-              "label": "Time series from the CSV referenced in the statistics-url field"
-            }
-          ]
-        }
-      ]
+      "timeframe": "Days",
+      "defaultTimestamp": 1788825600
     }
-  ],
-  "mapConstraints": {
-    "zoom": 12,
-    "center": [
-      16.875,
-      41.125
-    ],
-    "projection": "EPSG:3857"
-  }
+  ]
 }
