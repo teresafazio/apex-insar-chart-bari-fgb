@@ -1,36 +1,31 @@
-# apex-insar-chart-bari
+# apex-insar-chart-bari-fgb
 
-Esempio di configurazione per **APEx Geospatial Explorer**: cliccando su un punto InSAR si apre il grafico della serie storica dello spostamento.
+Example configuration for the **APEx Geospatial Explorer**: clicking on an InSAR point opens a chart with its displacement time series.
 
-Dati di test **sintetici**: 10 punti Sentinel-1 (orbita discendente) lungo la costa di Bari.
+**Synthetic** test data: 10 Sentinel-1 points (descending orbit) along the coastline of Bari, Italy.
 
-## Contenuto
+## Contents
 
-- `data/output_descending.geojson` – velocità media LOS (`vel`, mm/anno) e attributo `statistics-url`
-- `data/ts/` – spostamento cumulato LOS (`disp`, mm), un GeoJSON per trimestre, per il cursore temporale
-- `data/csv/` – serie storica completa di ogni punto (277 date, colonne `date`, `disp`)
-- `apex-config.json` – configurazione da importare nel Configuration Builder
+- `apex-config-fgb.json` – configuration to import into the Configuration Builder
+- `data/fgb/output_descending.fgb` – mean LOS velocity (`vel`, mm/year) with the `statistics-url` attribute (FlatGeobuf, EPSG:3857, spatial index)
+- `data/fgb/ts/` – cumulative LOS displacement (`disp`, mm), one FlatGeobuf per quarter, used by the time slider
+- `data/csv/` – full time series of each point (277 dates, columns `date`, `disp`)
+- `data/gpkg/output_descending.gpkg` – GeoPackage of the velocity layer (EPSG:4326, same fields as the original dataset), also as `output_descending.zip` for download
+- `data/output_descending.geojson`, `data/ts/` – the same data in GeoJSON format (EPSG:4326)
 
-## Come funziona il grafico
+## How the chart works
 
-Ogni punto ha l'attributo `statistics-url` con l'indirizzo del CSV della sua serie storica.
-Nel config, il grafico usa una sorgente `lookupURL` sul campo `statistics-url`:
-al clic sul punto APEx scarica il CSV e lo disegna.
+Each point has a `statistics-url` attribute containing the address of the CSV with its time series.
+In the configuration, the chart uses a `lookupURL` source on the `statistics-url` field:
+when a point is clicked, APEx downloads the CSV and plots it.
 
-## Uso
+## Usage
 
-1. Importa `apex-config.json` nel Configuration Builder (Home → Load).
-2. In anteprima: *Data Values* → clic su un punto → scheda *Charts*.
-
-## Variante FlatGeobuf
-
-- `data/fgb/` – gli stessi dati in formato FlatGeobuf (EPSG:3857, con indice spaziale)
-- `apex-config-fgb.json` – configurazione identica ad `apex-config.json` ma con i layer letti dai file `.fgb`
-
-Il grafico funziona allo stesso modo: ogni punto ha l'attributo `statistics-url` che punta al CSV in `data/csv/`.
+1. Import `apex-config-fgb.json` into the Configuration Builder (Home → Load).
+2. In the preview: *Data Values* → click on a point → *Charts* tab.
 
 ## Download
 
-- `data/gpkg/output_descending.gpkg` – GeoPackage del layer delle velocità (EPSG:4326, stessi campi del dataset originario)
-
-Nel Geospatial Explorer il pulsante di download è nel pannello informazioni del layer delle velocità.
+The download button in the information panel of the velocity layer serves `data/gpkg/output_descending.zip` through GitHub Pages
+(`https://teresafazio.github.io/apex-insar-chart-bari-fgb/`), so that the file is delivered with the correct type.
+GitHub Pages must be enabled for the repository (Settings → Pages → Deploy from a branch → `main` / root).

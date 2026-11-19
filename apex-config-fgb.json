@@ -10,7 +10,7 @@
     },
     "navigation": {
       "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
-      "title": "Subsidenza – Costa Barese (Sentinel-1 discendente)"
+      "title": "Subsidence – Bari coastline (Sentinel-1 descending)"
     },
     "theme": {
       "primary-color": "#1a3a5c",
@@ -19,7 +19,7 @@
     }
   },
   "interfaceGroups": [
-    "Deformazioni del suolo"
+    "Ground Motion"
   ],
   "exclusivitySets": [
     "basemaps"
@@ -51,7 +51,7 @@
     },
     {
       "id": "output-descending-subsidenza",
-      "name": "Subsidenza – velocità media LOS",
+      "name": "Subsidence – mean LOS velocity",
       "isActive": false,
       "data": [
         {
@@ -117,51 +117,51 @@
         }
       ],
       "meta": {
-        "description": "Velocità media di spostamento lungo la linea di vista (campo `vel`, mm/anno), orbita discendente Sentinel-1. Valori negativi indicano subsidenza. 10 punti dimostrativi lungo il litorale di Bari (dati sintetici).\n\n**Come vedere la serie storica.**\n- Apri *Data Values*\n- Clicca su un punto\n- Apri la scheda *Charts*",
+        "description": "Mean displacement velocity along the line of sight (field `vel`, mm/year), Sentinel-1 descending orbit. Negative values indicate subsidence. 10 demonstration points along the Bari coastline (synthetic data).\n\n**How to view the time series.**\n- Open *Data Values*\n- Click on a point\n- Open the *Charts* tab",
         "attribution": {
-          "text": "Dati di test – teresafazio/apex-insar-chart-bari-fgb",
+          "text": "Test data – teresafazio/apex-insar-chart-bari-fgb",
           "url": "https://github.com/teresafazio/apex-insar-chart-bari-fgb"
         },
-        "units": "mm/anno",
+        "units": "mm/year",
         "categories": [
           {
             "color": "#67001f",
-            "label": "Subsidenza molto forte (< -10)"
+            "label": "Very strong subsidence (< -10)"
           },
           {
             "color": "#b2182b",
-            "label": "Subsidenza forte (-10 ÷ -5)"
+            "label": "Strong subsidence (-10 to -5)"
           },
           {
             "color": "#ef8a62",
-            "label": "Subsidenza moderata (-5 ÷ -2)"
+            "label": "Moderate subsidence (-5 to -2)"
           },
           {
             "color": "#fddbc7",
-            "label": "Subsidenza lieve (-2 ÷ -1)"
+            "label": "Slight subsidence (-2 to -1)"
           },
           {
             "color": "#1a9850",
-            "label": "Stabile (-1 ÷ +1)"
+            "label": "Stable (-1 to +1)"
           },
           {
             "color": "#4393c3",
-            "label": "Sollevamento (> +1)"
+            "label": "Uplift (> +1)"
           }
         ],
         "fields": {
           "code": {
-            "label": "Codice punto",
+            "label": "Point code",
             "order": 1
           },
           "vel": {
-            "label": "Velocità media LOS",
-            "suffix": " mm/anno",
+            "label": "Mean LOS velocity",
+            "suffix": " mm/year",
             "precision": 2,
             "order": 2
           },
           "coher": {
-            "label": "Coerenza",
+            "label": "Coherence",
             "precision": 2,
             "order": 3
           },
@@ -172,18 +172,18 @@
             "order": 4
           },
           "height": {
-            "label": "Quota",
+            "label": "Height",
             "suffix": " m",
             "precision": 1,
             "order": 5
           },
           "lat": {
-            "label": "Latitudine",
+            "label": "Latitude",
             "precision": 5,
             "order": 6
           },
           "lon": {
-            "label": "Longitudine",
+            "label": "Longitude",
             "precision": 5,
             "order": 7
           },
@@ -473,7 +473,7 @@
         }
       },
       "layout": {
-        "interfaceGroup": "Deformazioni del suolo",
+        "interfaceGroup": "Ground Motion",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -499,13 +499,13 @@
       "charts": [
         {
           "chartType": "xy",
-          "title": "Serie storica di spostamento",
-          "subtitle": "Spostamento cumulato LOS del punto selezionato dal 14/05/2015",
+          "title": "Displacement time series",
+          "subtitle": "Cumulative LOS displacement of the selected point since 14/05/2015",
           "x": "date",
           "traces": [
             {
               "y": "disp",
-              "name": "Spostamento LOS del punto selezionato",
+              "name": "LOS displacement of the selected point",
               "type": "scatter",
               "mode": "lines+markers",
               "line": {
@@ -525,7 +525,7 @@
             "xaxis": {
               "type": "date",
               "title": {
-                "text": "Data"
+                "text": "Date"
               },
               "rangeslider": {
                 "visible": true,
@@ -534,7 +534,7 @@
             },
             "yaxis": {
               "title": {
-                "text": "Spostamento LOS [mm]"
+                "text": "LOS displacement [mm]"
               },
               "zeroline": true,
               "zerolinecolor": "#888888"
@@ -545,7 +545,7 @@
               "type": "lookupURL",
               "field": "statistics-url",
               "format": "csv",
-              "label": "Serie storica dal CSV indicato nel campo statistics-url"
+              "label": "Time series from the CSV referenced in the statistics-url field"
             }
           ]
         }
@@ -553,7 +553,7 @@
     },
     {
       "id": "output-descending-ts-spostamento",
-      "name": "Spostamento cumulato LOS – serie temporale",
+      "name": "Cumulative LOS displacement – time series",
       "isActive": true,
       "timeframe": "Days",
       "defaultTimestamp": 1788825600,
@@ -3568,9 +3568,9 @@
         }
       ],
       "meta": {
-        "description": "Spostamento cumulato lungo la linea di vista (campo `disp`, mm) rispetto alla prima acquisizione del 14/05/2015, orbita discendente Sentinel-1. Usa il cursore temporale per scorrere 47 acquisizioni (una per trimestre) fino all'08/09/2026. 10 punti dimostrativi lungo il litorale di Bari (dati sintetici).\n\n**Come vedere la serie storica.**\n- Apri *Data Values*\n- Clicca su un punto\n- Apri la scheda *Charts*",
+        "description": "Cumulative displacement along the line of sight (field `disp`, mm) relative to the first acquisition on 14/05/2015, Sentinel-1 descending orbit. Use the time slider to browse 47 acquisitions (one per quarter) up to 08/09/2026. 10 demonstration points along the Bari coastline (synthetic data).\n\n**How to view the time series.**\n- Open *Data Values*\n- Click on a point\n- Open the *Charts* tab",
         "attribution": {
-          "text": "Dati di test – teresafazio/apex-insar-chart-bari-fgb",
+          "text": "Test data – teresafazio/apex-insar-chart-bari-fgb",
           "url": "https://github.com/teresafazio/apex-insar-chart-bari-fgb"
         },
         "units": "mm",
@@ -3581,19 +3581,19 @@
           },
           {
             "color": "#b2182b",
-            "label": "-20 ÷ -10 mm"
+            "label": "-20 to -10 mm"
           },
           {
             "color": "#ef8a62",
-            "label": "-10 ÷ -5 mm"
+            "label": "-10 to -5 mm"
           },
           {
             "color": "#fddbc7",
-            "label": "-5 ÷ -2 mm"
+            "label": "-5 to -2 mm"
           },
           {
             "color": "#1a9850",
-            "label": "-2 ÷ +2 mm (stabile)"
+            "label": "-2 to +2 mm (stable)"
           },
           {
             "color": "#4393c3",
@@ -3602,39 +3602,39 @@
         ],
         "fields": {
           "code": {
-            "label": "Codice punto",
+            "label": "Point code",
             "order": 1
           },
           "date": {
-            "label": "Data acquisizione",
+            "label": "Acquisition date",
             "type": "date",
             "format": "dd/MM/yyyy",
             "order": 2
           },
           "disp": {
-            "label": "Spostamento cumulato LOS",
+            "label": "Cumulative LOS displacement",
             "suffix": " mm",
             "precision": 2,
             "order": 3
           },
           "vel": {
-            "label": "Velocità media LOS",
-            "suffix": " mm/anno",
+            "label": "Mean LOS velocity",
+            "suffix": " mm/year",
             "precision": 2,
             "order": 4
           },
           "coher": {
-            "label": "Coerenza",
+            "label": "Coherence",
             "precision": 2,
             "order": 5
           },
           "lat": {
-            "label": "Latitudine",
+            "label": "Latitude",
             "precision": 5,
             "order": 6
           },
           "lon": {
-            "label": "Longitudine",
+            "label": "Longitude",
             "precision": 5,
             "order": 7
           },
@@ -3647,7 +3647,7 @@
         }
       },
       "layout": {
-        "interfaceGroup": "Deformazioni del suolo",
+        "interfaceGroup": "Ground Motion",
         "contentLocation": "infoPanel",
         "layerCard": {
           "toggleable": true
@@ -3673,13 +3673,13 @@
       "charts": [
         {
           "chartType": "xy",
-          "title": "Serie storica di spostamento",
-          "subtitle": "Spostamento cumulato LOS del punto selezionato dal 14/05/2015",
+          "title": "Displacement time series",
+          "subtitle": "Cumulative LOS displacement of the selected point since 14/05/2015",
           "x": "date",
           "traces": [
             {
               "y": "disp",
-              "name": "Spostamento LOS del punto selezionato",
+              "name": "LOS displacement of the selected point",
               "type": "scatter",
               "mode": "lines+markers",
               "line": {
@@ -3699,7 +3699,7 @@
             "xaxis": {
               "type": "date",
               "title": {
-                "text": "Data"
+                "text": "Date"
               },
               "rangeslider": {
                 "visible": true,
@@ -3708,7 +3708,7 @@
             },
             "yaxis": {
               "title": {
-                "text": "Spostamento LOS [mm]"
+                "text": "LOS displacement [mm]"
               },
               "zeroline": true,
               "zerolinecolor": "#888888"
@@ -3719,7 +3719,7 @@
               "type": "lookupURL",
               "field": "statistics-url",
               "format": "csv",
-              "label": "Serie storica dal CSV indicato nel campo statistics-url"
+              "label": "Time series from the CSV referenced in the statistics-url field"
             }
           ]
         }
