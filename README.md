@@ -21,8 +21,9 @@ when a point is clicked, APEx downloads the CSV and plots it.
 
 ## Usage
 
-1. Import `apex-config-fgb.json` into the Configuration Builder (Home → Load).
-2. In the preview: *Data Values* → click on a point → *Charts* tab.
+1. Go to https://ge-config-builder.apex.esa.int/
+2. Import `apex-config-fgb.json` into the Configuration Builder (Home → Load).
+3. In the preview: *Data Values* → click on a point → *Charts* tab.
 
 ## Download
 
