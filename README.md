@@ -28,3 +28,9 @@ al clic sul punto APEx scarica il CSV e lo disegna.
 - `apex-config-fgb.json` – configurazione identica ad `apex-config.json` ma con i layer letti dai file `.fgb`
 
 Il grafico funziona allo stesso modo: ogni punto ha l'attributo `statistics-url` che punta al CSV in `data/csv/`.
+
+## Download
+
+- `data/gpkg/output_descending.gpkg` – GeoPackage del layer delle velocità (EPSG:4326, stessi campi del dataset originario)
+
+Nel Geospatial Explorer il pulsante di download è nel pannello informazioni del layer delle velocità.
