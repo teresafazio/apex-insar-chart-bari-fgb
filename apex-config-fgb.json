@@ -1,0 +1,3718 @@
+{
+  "version": "1.0.0",
+  "exportPrefix": "apex-insar-chart-bari-fgb",
+  "layout": {
+    "design": {
+      "variant": "standard",
+      "parameters": {
+        "position": "right"
+      }
+    },
+    "navigation": {
+      "logo": "https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg",
+      "title": "Subsidenza – Costa Barese (Sentinel-1 discendente)"
+    },
+    "theme": {
+      "primary-color": "#1a3a5c",
+      "background-color": "#ffffff",
+      "text-color-primary": "#1a1a1a"
+    }
+  },
+  "interfaceGroups": [
+    "Deformazioni del suolo"
+  ],
+  "exclusivitySets": [
+    "basemaps"
+  ],
+  "services": [],
+  "sources": [
+    {
+      "id": "basemap-osm",
+      "name": "OpenStreetMap",
+      "isActive": true,
+      "isBaseLayer": true,
+      "exclusivitySets": [
+        "basemaps"
+      ],
+      "data": [
+        {
+          "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "format": "xyz",
+          "zIndex": 10
+        }
+      ],
+      "meta": {
+        "description": "",
+        "attribution": {
+          "text": "© OpenStreetMap contributors",
+          "url": "https://www.openstreetmap.org/copyright"
+        }
+      }
+    },
+    {
+      "id": "output-descending-subsidenza",
+      "name": "Subsidenza – velocità media LOS",
+      "isActive": false,
+      "data": [
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/output_descending.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 50,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "vel"
+                  ],
+                  -10
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "vel"
+                  ],
+                  -5
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "vel"
+                  ],
+                  -2
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "vel"
+                  ],
+                  -1
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "vel"
+                  ],
+                  1
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Velocità media di spostamento lungo la linea di vista (campo `vel`, mm/anno), orbita discendente Sentinel-1. Valori negativi indicano subsidenza. 10 punti dimostrativi lungo il litorale di Bari (dati sintetici).\n\n**Come vedere la serie storica.**\n- Apri *Data Values*\n- Clicca su un punto\n- Apri la scheda *Charts*",
+        "attribution": {
+          "text": "Dati di test – teresafazio/apex-insar-chart-bari",
+          "url": "https://github.com/teresafazio/apex-insar-chart-bari"
+        },
+        "units": "mm/anno",
+        "categories": [
+          {
+            "color": "#67001f",
+            "label": "Subsidenza molto forte (< -10)"
+          },
+          {
+            "color": "#b2182b",
+            "label": "Subsidenza forte (-10 ÷ -5)"
+          },
+          {
+            "color": "#ef8a62",
+            "label": "Subsidenza moderata (-5 ÷ -2)"
+          },
+          {
+            "color": "#fddbc7",
+            "label": "Subsidenza lieve (-2 ÷ -1)"
+          },
+          {
+            "color": "#1a9850",
+            "label": "Stabile (-1 ÷ +1)"
+          },
+          {
+            "color": "#4393c3",
+            "label": "Sollevamento (> +1)"
+          }
+        ],
+        "fields": {
+          "code": {
+            "label": "Codice punto",
+            "order": 1
+          },
+          "vel": {
+            "label": "Velocità media LOS",
+            "suffix": " mm/anno",
+            "precision": 2,
+            "order": 2
+          },
+          "coher": {
+            "label": "Coerenza",
+            "precision": 2,
+            "order": 3
+          },
+          "rmse": {
+            "label": "RMSE",
+            "suffix": " mm",
+            "precision": 2,
+            "order": 4
+          },
+          "height": {
+            "label": "Quota",
+            "suffix": " m",
+            "precision": 1,
+            "order": 5
+          },
+          "lat": {
+            "label": "Latitudine",
+            "precision": 5,
+            "order": 6
+          },
+          "lon": {
+            "label": "Longitudine",
+            "precision": 5,
+            "order": 7
+          },
+          "range": null,
+          "azimuth": null,
+          "heading": null,
+          "incidence": null,
+          "fid": null,
+          "d20150514": null,
+          "d20150607": null,
+          "d20150701": null,
+          "d20150725": null,
+          "d20150818": null,
+          "d20150911": null,
+          "d20151029": null,
+          "d20151122": null,
+          "d20151216": null,
+          "d20160109": null,
+          "d20160202": null,
+          "d20160226": null,
+          "d20160321": null,
+          "d20160414": null,
+          "d20160508": null,
+          "d20160601": null,
+          "d20160719": null,
+          "d20160812": null,
+          "d20160905": null,
+          "d20160929": null,
+          "d20161023": null,
+          "d20161116": null,
+          "d20161210": null,
+          "d20170103": null,
+          "d20170127": null,
+          "d20170208": null,
+          "d20170220": null,
+          "d20170316": null,
+          "d20170328": null,
+          "d20170409": null,
+          "d20170421": null,
+          "d20170503": null,
+          "d20170515": null,
+          "d20170527": null,
+          "d20170608": null,
+          "d20170620": null,
+          "d20170702": null,
+          "d20170714": null,
+          "d20170726": null,
+          "d20170807": null,
+          "d20170819": null,
+          "d20170831": null,
+          "d20170912": null,
+          "d20170924": null,
+          "d20171018": null,
+          "d20171030": null,
+          "d20171111": null,
+          "d20171123": null,
+          "d20171205": null,
+          "d20171217": null,
+          "d20171229": null,
+          "d20180110": null,
+          "d20180122": null,
+          "d20180203": null,
+          "d20180215": null,
+          "d20180227": null,
+          "d20180311": null,
+          "d20180323": null,
+          "d20180404": null,
+          "d20180416": null,
+          "d20180428": null,
+          "d20180510": null,
+          "d20180522": null,
+          "d20180603": null,
+          "d20180615": null,
+          "d20180627": null,
+          "d20180709": null,
+          "d20180721": null,
+          "d20180802": null,
+          "d20180814": null,
+          "d20180826": null,
+          "d20180907": null,
+          "d20180919": null,
+          "d20181001": null,
+          "d20181013": null,
+          "d20181025": null,
+          "d20181106": null,
+          "d20181118": null,
+          "d20181130": null,
+          "d20181212": null,
+          "d20181224": null,
+          "d20190105": null,
+          "d20190117": null,
+          "d20190129": null,
+          "d20190210": null,
+          "d20190222": null,
+          "d20190306": null,
+          "d20190318": null,
+          "d20190330": null,
+          "d20190411": null,
+          "d20190423": null,
+          "d20190505": null,
+          "d20190517": null,
+          "d20190529": null,
+          "d20190610": null,
+          "d20190622": null,
+          "d20190704": null,
+          "d20190716": null,
+          "d20190728": null,
+          "d20190809": null,
+          "d20190821": null,
+          "d20190902": null,
+          "d20190914": null,
+          "d20190926": null,
+          "d20191008": null,
+          "d20191020": null,
+          "d20191101": null,
+          "d20191113": null,
+          "d20191125": null,
+          "d20191207": null,
+          "d20191219": null,
+          "d20191231": null,
+          "d20200112": null,
+          "d20200124": null,
+          "d20200205": null,
+          "d20200217": null,
+          "d20200229": null,
+          "d20200312": null,
+          "d20200324": null,
+          "d20200405": null,
+          "d20200417": null,
+          "d20200429": null,
+          "d20200511": null,
+          "d20200604": null,
+          "d20200616": null,
+          "d20200628": null,
+          "d20200815": null,
+          "d20200827": null,
+          "d20200908": null,
+          "d20200920": null,
+          "d20201002": null,
+          "d20201014": null,
+          "d20201026": null,
+          "d20201107": null,
+          "d20201113": null,
+          "d20201119": null,
+          "d20201125": null,
+          "d20201201": null,
+          "d20201213": null,
+          "d20201225": null,
+          "d20210106": null,
+          "d20210118": null,
+          "d20210130": null,
+          "d20210211": null,
+          "d20210223": null,
+          "d20210307": null,
+          "d20210319": null,
+          "d20210331": null,
+          "d20210412": null,
+          "d20210424": null,
+          "d20210729": null,
+          "d20210810": null,
+          "d20210822": null,
+          "d20210903": null,
+          "d20210915": null,
+          "d20210927": null,
+          "d20211009": null,
+          "d20211021": null,
+          "d20211102": null,
+          "d20211114": null,
+          "d20211126": null,
+          "d20211208": null,
+          "d20220101": null,
+          "d20220113": null,
+          "d20220125": null,
+          "d20220206": null,
+          "d20220218": null,
+          "d20220302": null,
+          "d20220314": null,
+          "d20220326": null,
+          "d20220407": null,
+          "d20220501": null,
+          "d20220817": null,
+          "d20220829": null,
+          "d20220910": null,
+          "d20220922": null,
+          "d20221004": null,
+          "d20221028": null,
+          "d20221109": null,
+          "d20221121": null,
+          "d20221203": null,
+          "d20221215": null,
+          "d20221227": null,
+          "d20230108": null,
+          "d20230120": null,
+          "d20230201": null,
+          "d20230213": null,
+          "d20230225": null,
+          "d20230309": null,
+          "d20230321": null,
+          "d20230402": null,
+          "d20230414": null,
+          "d20230426": null,
+          "d20230601": null,
+          "d20230613": null,
+          "d20230731": null,
+          "d20230812": null,
+          "d20230824": null,
+          "d20230905": null,
+          "d20230917": null,
+          "d20230929": null,
+          "d20231011": null,
+          "d20231023": null,
+          "d20231104": null,
+          "d20231116": null,
+          "d20231128": null,
+          "d20231210": null,
+          "d20231222": null,
+          "d20240103": null,
+          "d20240115": null,
+          "d20240127": null,
+          "d20240208": null,
+          "d20240220": null,
+          "d20240303": null,
+          "d20240315": null,
+          "d20240327": null,
+          "d20240408": null,
+          "d20240420": null,
+          "d20240502": null,
+          "d20240514": null,
+          "d20240701": null,
+          "d20240713": null,
+          "d20240725": null,
+          "d20240818": null,
+          "d20240830": null,
+          "d20240911": null,
+          "d20240923": null,
+          "d20241005": null,
+          "d20241017": null,
+          "d20241029": null,
+          "d20241110": null,
+          "d20241122": null,
+          "d20241204": null,
+          "d20241216": null,
+          "d20241228": null,
+          "d20250109": null,
+          "d20250121": null,
+          "d20250202": null,
+          "d20250214": null,
+          "d20250226": null,
+          "d20250310": null,
+          "d20250403": null,
+          "d20250415": null,
+          "d20250427": null,
+          "d20250614": null,
+          "d20250626": null,
+          "d20250801": null,
+          "d20250813": null,
+          "d20250825": null,
+          "d20250906": null,
+          "d20250930": null,
+          "d20251012": null,
+          "d20251024": null,
+          "d20251105": null,
+          "d20251129": null,
+          "d20251211": null,
+          "d20251223": null,
+          "d20260104": null,
+          "d20260116": null,
+          "d20260128": null,
+          "d20260209": null,
+          "d20260221": null,
+          "d20260305": null,
+          "d20260317": null,
+          "d20260329": null,
+          "d20260410": null,
+          "d20260504": null,
+          "d20260516": null,
+          "d20260528": null,
+          "d20260609": null,
+          "d20260621": null,
+          "d20260710": null,
+          "d20260722": null,
+          "d20260803": null,
+          "d20260815": null,
+          "d20260827": null,
+          "d20260908": null,
+          "statistics-url": null
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Deformazioni del suolo",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                16.74,
+                41.08,
+                17.01,
+                41.17
+              ]
+            }
+          }
+        }
+      },
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "Serie storica dello spostamento LOS",
+          "subtitle": "Spostamento cumulato rispetto al 14/05/2015",
+          "x": "date",
+          "traces": [
+            {
+              "y": "disp",
+              "name": "Spostamento LOS [mm]",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#b2182b",
+                "width": 1.5
+              },
+              "marker": {
+                "size": 3,
+                "color": "#b2182b"
+              },
+              "showlegend": true
+            }
+          ],
+          "layout": {
+            "height": 320,
+            "showlegend": false,
+            "xaxis": {
+              "type": "date"
+            },
+            "yaxis": {
+              "title": {
+                "text": "mm"
+              }
+            }
+          },
+          "sources": [
+            {
+              "type": "lookupURL",
+              "field": "statistics-url",
+              "format": "csv",
+              "label": "Serie storica dal CSV indicato nel campo statistics-url"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "output-descending-ts-spostamento",
+      "name": "Spostamento cumulato LOS – serie temporale",
+      "isActive": true,
+      "timeframe": "Days",
+      "defaultTimestamp": 1788825600,
+      "data": [
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20150514.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1431561600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20150701.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1435708800
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20150911.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1441929600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20160109.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1452297600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20160321.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1458518400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20160719.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1468886400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20160929.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1475107200
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20170103.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1483401600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20170328.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1490659200
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20170702.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1498953600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20170924.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1506211200
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20171229.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1514505600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20180404.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1522800000
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20180627.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1530057600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20181001.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1538352000
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20190105.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1546646400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20190330.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1553904000
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20190704.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1562198400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20190926.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1569456000
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20191231.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1577750400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20200405.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1586044800
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20200628.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1593302400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20201002.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1601596800
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20210106.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1609891200
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20210331.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1617148800
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20210729.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1627516800
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20210927.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1632700800
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20220101.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1640995200
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20220326.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1648252800
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20220817.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1660694400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20221004.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1664841600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20221227.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1672099200
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20230402.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1680393600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20230613.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1686614400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20230929.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1695945600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20240103.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1704240000
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20240327.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1711497600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20240701.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1719792000
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20241005.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1728086400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20241228.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1735344000
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20250403.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1743638400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20250626.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1750896000
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20250930.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1759190400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20260104.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1767484800
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20260329.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1774742400
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20260710.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1783641600
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20260908.fgb",
+          "format": "flatgeobuf",
+          "zIndex": 60,
+          "style": [
+            {
+              "circle-radius": 7,
+              "circle-fill-color": [
+                "case",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -20
+                ],
+                "#67001f",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -10
+                ],
+                "#b2182b",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -5
+                ],
+                "#ef8a62",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  -2
+                ],
+                "#fddbc7",
+                [
+                  "<",
+                  [
+                    "get",
+                    "disp"
+                  ],
+                  2
+                ],
+                "#1a9850",
+                "#4393c3"
+              ],
+              "circle-stroke-color": "#333333",
+              "circle-stroke-width": 0.75
+            }
+          ],
+          "timestamps": [
+            1788825600
+          ]
+        }
+      ],
+      "meta": {
+        "description": "Spostamento cumulato lungo la linea di vista (campo `disp`, mm) rispetto alla prima acquisizione del 14/05/2015, orbita discendente Sentinel-1. Usa il cursore temporale per scorrere 47 acquisizioni (una per trimestre) fino all'08/09/2026. 10 punti dimostrativi lungo il litorale di Bari (dati sintetici).\n\n**Come vedere la serie storica.**\n- Apri *Data Values*\n- Clicca su un punto\n- Apri la scheda *Charts*",
+        "attribution": {
+          "text": "Dati di test – teresafazio/apex-insar-chart-bari",
+          "url": "https://github.com/teresafazio/apex-insar-chart-bari"
+        },
+        "units": "mm",
+        "categories": [
+          {
+            "color": "#67001f",
+            "label": "< -20 mm"
+          },
+          {
+            "color": "#b2182b",
+            "label": "-20 ÷ -10 mm"
+          },
+          {
+            "color": "#ef8a62",
+            "label": "-10 ÷ -5 mm"
+          },
+          {
+            "color": "#fddbc7",
+            "label": "-5 ÷ -2 mm"
+          },
+          {
+            "color": "#1a9850",
+            "label": "-2 ÷ +2 mm (stabile)"
+          },
+          {
+            "color": "#4393c3",
+            "label": "> +2 mm"
+          }
+        ],
+        "fields": {
+          "code": {
+            "label": "Codice punto",
+            "order": 1
+          },
+          "date": {
+            "label": "Data acquisizione",
+            "type": "date",
+            "format": "dd/MM/yyyy",
+            "order": 2
+          },
+          "disp": {
+            "label": "Spostamento cumulato LOS",
+            "suffix": " mm",
+            "precision": 2,
+            "order": 3
+          },
+          "vel": {
+            "label": "Velocità media LOS",
+            "suffix": " mm/anno",
+            "precision": 2,
+            "order": 4
+          },
+          "coher": {
+            "label": "Coerenza",
+            "precision": 2,
+            "order": 5
+          },
+          "lat": {
+            "label": "Latitudine",
+            "precision": 5,
+            "order": 6
+          },
+          "lon": {
+            "label": "Longitudine",
+            "precision": 5,
+            "order": 7
+          },
+          "fid": null,
+          "statistics-url": null
+        },
+        "temporal": {
+          "timeframe": "Days",
+          "defaultTimestamp": 1788825600
+        }
+      },
+      "layout": {
+        "interfaceGroup": "Deformazioni del suolo",
+        "contentLocation": "infoPanel",
+        "layerCard": {
+          "toggleable": true
+        },
+        "infoPanel": {
+          "legend": {
+            "type": "swatch"
+          },
+          "controls": {
+            "opacitySlider": true,
+            "zoomToCenter": {
+              "extent": [
+                16.74,
+                41.08,
+                17.01,
+                41.17
+              ]
+            },
+            "temporalControls": true
+          }
+        }
+      },
+      "charts": [
+        {
+          "chartType": "xy",
+          "title": "Serie storica dello spostamento LOS",
+          "subtitle": "Spostamento cumulato rispetto al 14/05/2015",
+          "x": "date",
+          "traces": [
+            {
+              "y": "disp",
+              "name": "Spostamento LOS [mm]",
+              "type": "scatter",
+              "mode": "lines+markers",
+              "line": {
+                "color": "#b2182b",
+                "width": 1.5
+              },
+              "marker": {
+                "size": 3,
+                "color": "#b2182b"
+              },
+              "showlegend": true
+            }
+          ],
+          "layout": {
+            "height": 320,
+            "showlegend": false,
+            "xaxis": {
+              "type": "date"
+            },
+            "yaxis": {
+              "title": {
+                "text": "mm"
+              }
+            }
+          },
+          "sources": [
+            {
+              "type": "lookupURL",
+              "field": "statistics-url",
+              "format": "csv",
+              "label": "Serie storica dal CSV indicato nel campo statistics-url"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "mapConstraints": {
+    "zoom": 12,
+    "center": [
+      16.875,
+      41.125
+    ],
+    "projection": "EPSG:3857"
+  }
+}
