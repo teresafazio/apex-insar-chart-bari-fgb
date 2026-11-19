@@ -55,7 +55,7 @@
       "isActive": false,
       "data": [
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/output_descending.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/output_descending.fgb",
           "format": "flatgeobuf",
           "zIndex": 50,
           "style": [
@@ -119,8 +119,8 @@
       "meta": {
         "description": "Velocità media di spostamento lungo la linea di vista (campo `vel`, mm/anno), orbita discendente Sentinel-1. Valori negativi indicano subsidenza. 10 punti dimostrativi lungo il litorale di Bari (dati sintetici).\n\n**Come vedere la serie storica.**\n- Apri *Data Values*\n- Clicca su un punto\n- Apri la scheda *Charts*",
         "attribution": {
-          "text": "Dati di test – teresafazio/apex-insar-chart-bari",
-          "url": "https://github.com/teresafazio/apex-insar-chart-bari"
+          "text": "Dati di test – teresafazio/apex-insar-chart-bari-fgb",
+          "url": "https://github.com/teresafazio/apex-insar-chart-bari-fgb"
         },
         "units": "mm/anno",
         "categories": [
@@ -492,7 +492,7 @@
                 41.17
               ]
             },
-            "download": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/gpkg/output_descending.gpkg"
+            "download": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/gpkg/output_descending.gpkg"
           }
         }
       },
@@ -550,7 +550,7 @@
       "defaultTimestamp": 1788825600,
       "data": [
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20150514.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20150514.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -614,7 +614,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20150701.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20150701.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -678,7 +678,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20150911.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20150911.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -742,7 +742,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20160109.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20160109.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -806,7 +806,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20160321.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20160321.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -870,7 +870,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20160719.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20160719.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -934,7 +934,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20160929.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20160929.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -998,7 +998,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20170103.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20170103.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1062,7 +1062,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20170328.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20170328.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1126,7 +1126,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20170702.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20170702.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1190,7 +1190,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20170924.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20170924.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1254,7 +1254,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20171229.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20171229.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1318,7 +1318,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20180404.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20180404.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1382,7 +1382,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20180627.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20180627.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1446,7 +1446,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20181001.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20181001.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1510,7 +1510,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20190105.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20190105.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1574,7 +1574,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20190330.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20190330.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1638,7 +1638,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20190704.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20190704.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1702,7 +1702,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20190926.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20190926.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1766,7 +1766,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20191231.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20191231.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1830,7 +1830,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20200405.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20200405.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1894,7 +1894,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20200628.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20200628.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -1958,7 +1958,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20201002.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20201002.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2022,7 +2022,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20210106.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20210106.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2086,7 +2086,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20210331.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20210331.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2150,7 +2150,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20210729.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20210729.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2214,7 +2214,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20210927.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20210927.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2278,7 +2278,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20220101.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20220101.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2342,7 +2342,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20220326.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20220326.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2406,7 +2406,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20220817.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20220817.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2470,7 +2470,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20221004.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20221004.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2534,7 +2534,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20221227.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20221227.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2598,7 +2598,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20230402.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20230402.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2662,7 +2662,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20230613.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20230613.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2726,7 +2726,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20230929.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20230929.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2790,7 +2790,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20240103.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20240103.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2854,7 +2854,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20240327.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20240327.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2918,7 +2918,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20240701.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20240701.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -2982,7 +2982,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20241005.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20241005.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3046,7 +3046,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20241228.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20241228.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3110,7 +3110,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20250403.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20250403.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3174,7 +3174,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20250626.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20250626.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3238,7 +3238,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20250930.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20250930.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3302,7 +3302,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20260104.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20260104.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3366,7 +3366,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20260329.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20260329.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3430,7 +3430,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20260710.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20260710.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3494,7 +3494,7 @@
           ]
         },
         {
-          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari/main/data/fgb/ts/output_descending_ts_20260908.fgb",
+          "url": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/fgb/ts/output_descending_ts_20260908.fgb",
           "format": "flatgeobuf",
           "zIndex": 60,
           "style": [
@@ -3561,8 +3561,8 @@
       "meta": {
         "description": "Spostamento cumulato lungo la linea di vista (campo `disp`, mm) rispetto alla prima acquisizione del 14/05/2015, orbita discendente Sentinel-1. Usa il cursore temporale per scorrere 47 acquisizioni (una per trimestre) fino all'08/09/2026. 10 punti dimostrativi lungo il litorale di Bari (dati sintetici).\n\n**Come vedere la serie storica.**\n- Apri *Data Values*\n- Clicca su un punto\n- Apri la scheda *Charts*",
         "attribution": {
-          "text": "Dati di test – teresafazio/apex-insar-chart-bari",
-          "url": "https://github.com/teresafazio/apex-insar-chart-bari"
+          "text": "Dati di test – teresafazio/apex-insar-chart-bari-fgb",
+          "url": "https://github.com/teresafazio/apex-insar-chart-bari-fgb"
         },
         "units": "mm",
         "categories": [
