@@ -492,43 +492,52 @@
                 41.17
               ]
             },
-            "download": "https://raw.githubusercontent.com/teresafazio/apex-insar-chart-bari-fgb/main/data/gpkg/output_descending.gpkg"
+            "download": "https://teresafazio.github.io/apex-insar-chart-bari-fgb/data/gpkg/output_descending.zip"
           }
         }
       },
       "charts": [
         {
           "chartType": "xy",
-          "title": "Serie storica dello spostamento LOS",
-          "subtitle": "Spostamento cumulato rispetto al 14/05/2015",
+          "title": "Serie storica di spostamento",
+          "subtitle": "Spostamento cumulato LOS del punto selezionato dal 14/05/2015",
           "x": "date",
           "traces": [
             {
               "y": "disp",
-              "name": "Spostamento LOS [mm]",
+              "name": "Spostamento LOS del punto selezionato",
               "type": "scatter",
               "mode": "lines+markers",
               "line": {
-                "color": "#b2182b",
-                "width": 1.5
+                "color": "#d62728",
+                "width": 2
               },
               "marker": {
-                "size": 3,
-                "color": "#b2182b"
+                "size": 4,
+                "color": "#d62728"
               },
-              "showlegend": true
+              "showlegend": false
             }
           ],
           "layout": {
-            "height": 320,
+            "height": 380,
             "showlegend": false,
             "xaxis": {
-              "type": "date"
+              "type": "date",
+              "title": {
+                "text": "Data"
+              },
+              "rangeslider": {
+                "visible": true,
+                "thickness": 0.12
+              }
             },
             "yaxis": {
               "title": {
-                "text": "mm"
-              }
+                "text": "Spostamento LOS [mm]"
+              },
+              "zeroline": true,
+              "zerolinecolor": "#888888"
             }
           },
           "sources": [
@@ -3664,36 +3673,45 @@
       "charts": [
         {
           "chartType": "xy",
-          "title": "Serie storica dello spostamento LOS",
-          "subtitle": "Spostamento cumulato rispetto al 14/05/2015",
+          "title": "Serie storica di spostamento",
+          "subtitle": "Spostamento cumulato LOS del punto selezionato dal 14/05/2015",
           "x": "date",
           "traces": [
             {
               "y": "disp",
-              "name": "Spostamento LOS [mm]",
+              "name": "Spostamento LOS del punto selezionato",
               "type": "scatter",
               "mode": "lines+markers",
               "line": {
-                "color": "#b2182b",
-                "width": 1.5
+                "color": "#d62728",
+                "width": 2
               },
               "marker": {
-                "size": 3,
-                "color": "#b2182b"
+                "size": 4,
+                "color": "#d62728"
               },
-              "showlegend": true
+              "showlegend": false
             }
           ],
           "layout": {
-            "height": 320,
+            "height": 380,
             "showlegend": false,
             "xaxis": {
-              "type": "date"
+              "type": "date",
+              "title": {
+                "text": "Data"
+              },
+              "rangeslider": {
+                "visible": true,
+                "thickness": 0.12
+              }
             },
             "yaxis": {
               "title": {
-                "text": "mm"
-              }
+                "text": "Spostamento LOS [mm]"
+              },
+              "zeroline": true,
+              "zerolinecolor": "#888888"
             }
           },
           "sources": [
